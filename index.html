@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lucky Zone</title>
+<title>BP Exchange Max</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -17,22 +17,19 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(135deg, #ff00cc, #3333ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* Animated background glow */
+/* Background glow */
 body::before {
   content: '';
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
-  animation: rotate 12s linear infinite;
+  position: fixed;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(0,255,255,0.15), transparent 60%);
+  animation: rotate 20s linear infinite;
 }
 
 @keyframes rotate {
@@ -42,80 +39,87 @@ body::before {
 
 .container {
   text-align: center;
+  padding: 80px 20px;
   z-index: 1;
-  animation: fadeIn 1.5s ease;
+  position: relative;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
+/* Title */
 h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  font-weight: 700;
+  font-size: 3.5rem;
+  background: linear-gradient(45deg, #00f2ff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 p {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  opacity: 0.9;
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
-/* Button styles */
+/* Card */
+.card {
+  margin: 50px auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Button */
 .btn {
   display: inline-block;
+  margin-top: 20px;
   padding: 15px 35px;
-  margin: 10px;
-  font-size: 1rem;
   border-radius: 30px;
-  text-decoration: none;
+  background: linear-gradient(45deg, #00f2ff, #ff00ff);
   color: white;
-  background: linear-gradient(45deg, #ff6a00, #ff00cc);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transition: 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .btn:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
 }
 
-/* Glow effect */
-.btn::after {
-  content: '';
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  top: -100%;
-  left: -100%;
-  background: rgba(255,255,255,0.2);
-  transform: rotate(45deg);
-  transition: 0.5s;
+/* Features */
+.features {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.btn:hover::after {
-  top: 100%;
-  left: 100%;
+.feature {
+  margin: 15px;
+  padding: 20px;
+  width: 250px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
 }
 
-/* Floating particles */
-.particle {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
+.feature:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  margin-top: 80px;
   opacity: 0.6;
-  animation: float 10s linear infinite;
-}
-
-@keyframes float {
-  from { transform: translateY(100vh);}
-  to { transform: translateY(-10vh);}
+  font-size: 0.9rem;
 }
 
 </style>
@@ -124,24 +128,34 @@ p {
 <body>
 
 <div class="container">
-  <h1>Lucky Zone</h1>
-  <p>A Step into a New Era</p>
+  <h1>BP Exchange Max</h1>
+  <p>Fast. Secure. Powerful Exchange Experience</p>
 
-  <!-- CHANGE LINK BELOW -->
-  <a href="your-app.apk" class="btn" download>Download App</a>
+  <div class="card">
+    <h2>Download Now</h2>
+    <p>Get instant access to a smooth and secure platform</p>
+    
+    <a href="https://github.com/TxDevelopers/bp-exchange-max/releases/download/app/bp.exchange.max.apk" class="btn">
+      Download APK
+    </a>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      ⚡ Fast Transactions
+    </div>
+    <div class="feature">
+      🔒 Secure System
+    </div>
+    <div class="feature">
+      📱 Easy to Use
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 BP Exchange Max
+  </div>
 </div>
-
-<!-- particles -->
-<script>
-for (let i = 0; i < 30; i++) {
-  let p = document.createElement("div");
-  p.classList.add("particle");
-  p.style.left = Math.random() * 100 + "vw";
-  p.style.animationDuration = (5 + Math.random() * 5) + "s";
-  p.style.opacity = Math.random();
-  document.body.appendChild(p);
-}
-</script>
 
 </body>
 </html>
